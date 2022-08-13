@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   const [showSplash, setShowSplash] = useState(true)
   
   useEffect(() => {
-    setTimeout(() => setShowSplash(false), 3000)
+    setTimeout(() => setShowSplash(false), 4000)
   }, [])
 
   return (

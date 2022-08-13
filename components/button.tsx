@@ -14,7 +14,7 @@ const Button: NextPage<ButtonProps> = ({
 }) => (
   <a
     href={href}
-    className={`inline-flex bg-green-500 text-gray-800 font-mono font-semibold uppercase px-2 py-1 rounded-md justify-center items-center ${className}`}
+    className={`inline-flex text-gray-800 font-mono font-semibold uppercase px-2 py-1 rounded-md justify-center items-center text-white space-x-2 ${className}`}
   >
     {children}
   </a>
