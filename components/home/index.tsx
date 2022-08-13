@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Typed from 'react-typed'
-import { FaBitcoin } from 'react-icons/fa'
+import { FaBitcoin, FaDiscord } from 'react-icons/fa'
+
 import Button from '../button'
 
 const Home: NextPage = () => {
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
               ></Typed>
             </h2>
             <h3 className="text-gray-300 mx-2 mt-4 text-sm">
-              First ever "Bitcoin-Only" Hackathon at India.
+              First ever <span className="font-semibold">"Bitcoin-Only"</span> Hackathon at India.
             </h3>
             <img className="mt-10" src="/btc-banner.webp" />
             <p className="mt-10 text-gray-300 mx-2 text-md">
@@ -45,6 +46,11 @@ const Home: NextPage = () => {
             </p>
             <Button className="mt-6 mx-2 text-lg font-bold px-4">
               Register
+            </Button>
+            <br />
+            <Button className="mt-4 mx-2 normal-case font-bold px-4 bg-blue-600 text-white space-x-2">
+              <FaDiscord />
+              <span>Join Discord</span>
             </Button>
           </main>
         </div>
