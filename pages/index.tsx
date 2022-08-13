@@ -1,10 +1,9 @@
 import type { NextPage } from 'next'
+import Splash from '../components/splash'
 
 const Home: NextPage = () => {
   return (
-    <h1 className="text-3xl font-bold">
-      Hello world!
-    </h1>
+    <Splash />
   )
 }
 
