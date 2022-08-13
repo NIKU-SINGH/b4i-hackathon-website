@@ -7,8 +7,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ["Roboto Mono", "ui-monospace", "SFMono-Regular"],
+        mono: ["Roboto Mono", "ui-monospace", "SFMono-Regular"]
       },
+      colors: {
+        'theme-bg': '#0D1B2A'
+      }
     },
   },
   plugins: [],
