@@ -106,7 +106,7 @@ const Home: NextPage = () => {
             <h2 className="text-xl text-green-400 font-medium mx-2">
               FAQs
             </h2>
-            <div className="mt-4 mx-2 flex flex-col justify-center space-y-3">
+            <div className="mt-4 mx-2 flex flex-col justify-center">
               <Accordion idx={0} expandedIdx={faq} setExpandedIdx={setFaq} title="Question 1" >Answer 1</Accordion>
               <Accordion idx={1} expandedIdx={faq} setExpandedIdx={setFaq} title="Question 2" >Answer 2</Accordion>
               <Accordion idx={2} expandedIdx={faq} setExpandedIdx={setFaq} title="Question 3" >Answer 3</Accordion>

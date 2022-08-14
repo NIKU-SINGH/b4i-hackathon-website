@@ -25,7 +25,7 @@ const Accordion: NextPage<AccordionProps> = ({
     <>
       <motion.header
         initial={false}
-        className="bg-gray-700 text-white px-2 cursor-pointer rounded flex items-center justify-between"
+        className="mt-2 bg-gray-700 text-white px-2 cursor-pointer rounded flex items-center justify-between"
         onClick={() => setExpandedIdx(isOpen ? -1 : idx)}
       >
         <span>{title}</span>
@@ -34,7 +34,7 @@ const Accordion: NextPage<AccordionProps> = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.section
-            className="bg-white px-2 rounded"
+            className="px-2 bg-white rounded"
             key="content"
             initial="collapsed"
             animate="open"
@@ -43,7 +43,7 @@ const Accordion: NextPage<AccordionProps> = ({
               open: { opacity: 1, height: 'auto' },
               collapsed: { opacity: 0, height: 0 },
             }}
-            transition={{ duration: 0.5, ease: [0.04, 0.62, 0.23, 0.99]}}
+            transition={{ duration: 0.2, ease: [0.04, 0.62, 0.23, 0.99]}}
           >
             {children}
           </motion.section>
