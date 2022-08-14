@@ -26,7 +26,7 @@ const Accordion: NextPage<AccordionProps> = ({
       <motion.header
         initial={false}
         className={`select-none mt-2 bg-gray-700 py-1 text-white px-2 cursor-pointer rounded flex items-center justify-between ${
-          isOpen && 'rounded-b-none'
+          isOpen && 'rounded-b-none bg-gray-800'
         }`}
         onClick={() => setExpandedIdx(isOpen ? -1 : idx)}
       >
