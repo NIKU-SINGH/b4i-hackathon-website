@@ -19,6 +19,7 @@ import Button from '../button'
 import Accordion from './accordion'
 import Prize from './prize'
 import Sponsor from './sponsor'
+import Profile from './profile'
 
 const Home: NextPage = () => {
   const [faq, setFaq] = useState<number>(-1)
@@ -228,6 +229,27 @@ const Home: NextPage = () => {
               >
                 Simplest way to integrate Lightning into your Bitcoin wallet.
               </Sponsor>
+            </div>
+          </section>
+          <section className="mt-10">
+            <h2 className="text-xl text-green-400 font-medium mx-2 uppercase">
+              team
+            </h2>
+            <p className="mx-2 mt-2 text-white text-sm">
+              Interested in joining our team?
+              <a
+                href="mailto:b4itechnical@protonmail.com?subject=Interested to join team&body=Hi, I'm interested in joining MoneyHacks and volunteer my time there. Would love to know how I can help."
+                className="ml-2 text-blue-300 font-bold underline underline-offset-2 cursor-pointer"
+              >
+                Hit us up!
+              </a>
+            </p>
+            <div className="mt-4 mx-2 grid grid-cols-4 gap-4">
+              <Profile name="Rajarshi" photo="/team/rajarshimaitra.jpeg" twitter="rajarshimaitra" />
+              <Profile name="Sandipan" photo="/team/sandipndev.jpeg" twitter="sandipndev" />
+              <Profile name="Kartik" photo="/team/krtk6160.jpeg" twitter="krtk6160" />
+              <Profile name="Parsh" photo="/team/parsh.jpeg" twitter="parsh" />
+              <Profile name="Shreyan" photo="/team/shreyan.jpg" twitter="JoshiShreyan" />
             </div>
           </section>
         </div>
