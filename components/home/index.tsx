@@ -37,7 +37,7 @@ const Home: NextPage = () => {
               ></Typed>
             </h2>
             <h3 className="text-gray-300 mx-2 mt-4 text-sm">
-              First ever <span className="font-semibold">"Bitcoin-Only"</span>{' '}
+              First ever <span className="font-semibold">&quot;Bitcoin-Only&quot;</span>{' '}
               Hackathon at India.
             </h3>
             <img className="mt-10" src="/btc-banner.webp" />
@@ -151,7 +151,7 @@ const Home: NextPage = () => {
               <Prize icon={<FaMedal />} name="Overall Second">Second Overall prize will be given to the second best project of the hackathon</Prize>
               <Prize icon={<BiMedal />} name="Overall Third">Best third overall project of the hackathon will win some awesome prizes</Prize>
               <Prize icon={<FaAward />} name="Best Solo">You project will qualify for this prize if you participate alone without a team</Prize>
-              <Prize icon={<AiFillTrophy />} name="Best Beginner">Your project will qualify for this category if atleast 50% of your topic is functional and you're starting out</Prize>
+              <Prize icon={<AiFillTrophy />} name="Best Beginner">Your project will qualify for this category if atleast 50% of your topic is functional and you&apos;re starting out</Prize>
             </div>
           </section>
         </div>
