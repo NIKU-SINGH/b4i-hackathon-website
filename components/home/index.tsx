@@ -48,7 +48,9 @@ const Home: NextPage = () => {
               <span className="font-semibold">&quot;Bitcoin-Only&quot;</span>{' '}
               Hackathon at India.
             </h3>
-            <img className="mt-10" src="/btc-banner.webp" />
+            <picture>
+              <img className="mt-10" src="/btc-banner.webp" alt="Bitcoin Banner" />
+            </picture>
             <p className="mt-10 text-gray-300 mx-2 text-md">
               Are you hyped up for Bitcoin for all of its magic, while your
               parents and friends never seem to get it, and find yourself as a
@@ -187,7 +189,7 @@ const Home: NextPage = () => {
                 href="mailto:b4itechnical@protonmail.com?subject=Sponsorship for MoneyHacks&body=Hi, I'm interested in sponsoring MoneyHacks. Would love to reach out."
                 className="ml-2 text-blue-300 font-bold underline underline-offset-2 cursor-pointer"
               >
-                Let's talk.
+                Let&apos;s talk.
               </a>
             </p>
             <div className="mt-4 mx-2 flex flex-col space-y-4">

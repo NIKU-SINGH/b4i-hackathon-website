@@ -19,7 +19,9 @@ const Sponsor: NextPage<SponsorProps> = ({ logo, name, children, link }) => {
       whileTap={{ scale: 0.98 }}
       className="select-none bg-slate-800 rounded-md overflow-hidden flex items-center cursor-pointer"
     >
-      <img className='h-20' src={logo} />
+      <picture>
+        <img className='h-20' src={logo} alt={`${name}'s logo`} />
+      </picture>
       <div className="py-2 px-4">
         <h5 className='text-white font-medium text-lg'>{name}</h5>
         <div className='mt-1 text-gray-300 text-xs'>{children}</div>
