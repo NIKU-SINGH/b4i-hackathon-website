@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   const headlines = ['Design.', 'Develop.', 'Code.', 'Ideate.', 'Bitcoin.']
 
   return (
-    <div className="w-screen overflow-hidden font-mono max-h-screen overflow-y-scroll pb-6">
+    <div className="w-screen font-mono max-h-screen overflow-y-scroll pb-6 px-1 sm:px-0">
       <div className="flex flex-col items-center">
         <div className="max-w-xl">
           <nav className="self-start mt-4 mx-2 flex justify-between items-center">
