@@ -8,8 +8,10 @@ import {
   FaAward,
   FaBitcoin,
   FaDiscord,
+  FaGithub,
   FaMedal,
   FaTrophy,
+  FaTwitter,
 } from 'react-icons/fa'
 import { SiDevpost } from 'react-icons/si'
 import { BiMedal } from 'react-icons/bi'
@@ -26,7 +28,7 @@ const Home: NextPage = () => {
   const headlines = ['Design.', 'Develop.', 'Code.', 'Ideate.', 'Bitcoin.']
 
   return (
-    <div className="w-screen font-mono max-h-screen overflow-y-scroll pb-6 px-1 sm:px-0">
+    <div className="w-screen font-mono max-h-screen overflow-y-scroll px-1 sm:px-0">
       <div className="flex flex-col items-center">
         <div className="max-w-xl">
           <nav className="self-start mt-4 mx-2 flex justify-between items-center">
@@ -50,7 +52,11 @@ const Home: NextPage = () => {
               Hackathon at India.
             </h3>
             <picture>
-              <img className="mt-10" src="/btc-banner.webp" alt="Bitcoin Banner" />
+              <img
+                className="mt-10"
+                src="/btc-banner.webp"
+                alt="Bitcoin Banner"
+              />
             </picture>
             <p className="mt-10 text-gray-300 mx-2 text-md">
               Are you hyped up for Bitcoin for all of its magic, while your
@@ -245,15 +251,41 @@ const Home: NextPage = () => {
               </a>
             </p>
             <div className="mt-4 mx-2 grid grid-cols-4 gap-4">
-              <Profile name="Rajarshi" photo="/team/rajarshimaitra.jpeg" twitter="rajarshimaitra" />
-              <Profile name="Sandipan" photo="/team/sandipndev.jpeg" twitter="sandipndev" />
-              <Profile name="Kartik" photo="/team/krtk6160.jpeg" twitter="krtk6160" />
+              <Profile
+                name="Rajarshi"
+                photo="/team/rajarshimaitra.jpeg"
+                twitter="rajarshimaitra"
+              />
+              <Profile
+                name="Sandipan"
+                photo="/team/sandipndev.jpeg"
+                twitter="sandipndev"
+              />
+              <Profile
+                name="Kartik"
+                photo="/team/krtk6160.jpeg"
+                twitter="krtk6160"
+              />
               <Profile name="Parsh" photo="/team/parsh.jpeg" twitter="parsh" />
-              <Profile name="Shreyan" photo="/team/shreyan.jpg" twitter="JoshiShreyan" />
+              <Profile
+                name="Shreyan"
+                photo="/team/shreyan.jpg"
+                twitter="JoshiShreyan"
+              />
             </div>
           </section>
-          <footer>
-            
+          <footer className="text-white text-xs mt-8 py-4 px-2 flex flex-col space-y-1 border-t border-t-slate-500">
+            <div className="font-medium">Useful Links:</div>
+            <a className="text-blue-300">Privacy Policy</a>
+            <a className="text-blue-300">Terms of Service</a>
+            <br />
+            <div className="font-medium">Questions?</div>
+            <a className="text-blue-300">Contact Us</a>
+            <br />
+            <div className="text-xl flex flex-row space-x-4">
+              <FaGithub />
+              <FaTwitter />
+            </div>
           </footer>
         </div>
       </div>
