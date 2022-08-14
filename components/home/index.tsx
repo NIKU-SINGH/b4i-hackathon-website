@@ -4,7 +4,13 @@ import { useState } from 'react'
 import Countdown from 'react-countdown'
 import Typed from 'react-typed'
 
-import { FaAward, FaBitcoin, FaDiscord, FaMedal, FaTrophy } from 'react-icons/fa'
+import {
+  FaAward,
+  FaBitcoin,
+  FaDiscord,
+  FaMedal,
+  FaTrophy,
+} from 'react-icons/fa'
 import { SiDevpost } from 'react-icons/si'
 import { BiMedal } from 'react-icons/bi'
 import { AiFillTrophy } from 'react-icons/ai'
@@ -12,6 +18,7 @@ import { AiFillTrophy } from 'react-icons/ai'
 import Button from '../button'
 import Accordion from './accordion'
 import Prize from './prize'
+import Sponsor from './sponsor'
 
 const Home: NextPage = () => {
   const [faq, setFaq] = useState<number>(-1)
@@ -37,7 +44,8 @@ const Home: NextPage = () => {
               ></Typed>
             </h2>
             <h3 className="text-gray-300 mx-2 mt-4 text-sm">
-              First ever <span className="font-semibold">&quot;Bitcoin-Only&quot;</span>{' '}
+              First ever{' '}
+              <span className="font-semibold">&quot;Bitcoin-Only&quot;</span>{' '}
               Hackathon at India.
             </h3>
             <img className="mt-10" src="/btc-banner.webp" />
@@ -147,11 +155,77 @@ const Home: NextPage = () => {
               Prizes
             </h2>
             <div className="mt-4 mx-2 grid grid-rows-2 grid-cols-2 gap-2">
-              <Prize icon={<FaTrophy />} name="Overall First">First Overall prize will be given to a project that outstands all other submissions</Prize>
-              <Prize icon={<FaMedal />} name="Overall Second">Second Overall prize will be given to the second best project of the hackathon</Prize>
-              <Prize icon={<BiMedal />} name="Overall Third">Best third overall project of the hackathon will win some awesome prizes</Prize>
-              <Prize icon={<FaAward />} name="Best Solo">You project will qualify for this prize if you participate alone without a team</Prize>
-              <Prize icon={<AiFillTrophy />} name="Best Beginner">Your project will qualify for this category if atleast 50% of your topic is functional and you&apos;re starting out</Prize>
+              <Prize icon={<FaTrophy />} name="Overall First">
+                First Overall prize will be given to a project that outstands
+                all other submissions
+              </Prize>
+              <Prize icon={<FaMedal />} name="Overall Second">
+                Second Overall prize will be given to the second best project of
+                the hackathon
+              </Prize>
+              <Prize icon={<BiMedal />} name="Overall Third">
+                Best third overall project of the hackathon will win some
+                awesome prizes
+              </Prize>
+              <Prize icon={<FaAward />} name="Best Solo">
+                You project will qualify for this prize if you participate alone
+                without a team
+              </Prize>
+              <Prize icon={<AiFillTrophy />} name="Best Beginner">
+                Your project will qualify for this category if atleast 50% of
+                your topic is functional and you&apos;re starting out
+              </Prize>
+            </div>
+          </section>
+          <section className="mt-10">
+            <h2 className="text-xl text-green-400 font-medium mx-2 uppercase">
+              Sponsors
+            </h2>
+            <p className="mx-2 mt-2 text-white text-sm">
+              We&apos;re looking for sponsors.
+              <a
+                href="mailto:b4itechnical@protonmail.com?subject=Sponsorship for MoneyHacks&body=Hi, I'm interested in sponsoring MoneyHacks. Would love to reach out."
+                className="ml-2 text-blue-300 font-bold underline underline-offset-2 cursor-pointer"
+              >
+                Let's talk.
+              </a>
+            </p>
+            <div className="mt-4 mx-2 flex flex-col space-y-4">
+              <Sponsor
+                logo="/sponsors/galoy.jpg"
+                name="Galoy"
+                link="https://galoy.io"
+              >
+                Connecting communities by creating circular Bitcoin Economy.
+              </Sponsor>
+              <Sponsor
+                logo="/sponsors/bdk.png"
+                name="BitcoinDevKit"
+                link="https://bitcoindevkit.org/"
+              >
+                With BDK, you seamlessly build cross platform mobile wallets.
+              </Sponsor>
+              <Sponsor
+                logo="/sponsors/hexa.png"
+                name="Hexa Wallet"
+                link="https://bitcoindevkit.org/"
+              >
+                A simple, secure, private, non-custodial Bitcoin wallet.
+              </Sponsor>
+              <Sponsor
+                logo="/sponsors/gosats.jpeg"
+                name="GoSats"
+                link="https://bitcoindevkit.org/"
+              >
+                Earn Bitcoin when you shop.
+              </Sponsor>
+              <Sponsor
+                logo="/sponsors/ldk.jpg"
+                name="LightningDevKit"
+                link="https://lightningdevkit.org/"
+              >
+                Simplest way to integrate Lightning into your Bitcoin wallet.
+              </Sponsor>
             </div>
           </section>
         </div>
