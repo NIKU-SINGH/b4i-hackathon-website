@@ -252,6 +252,9 @@ const Home: NextPage = () => {
               <Profile name="Shreyan" photo="/team/shreyan.jpg" twitter="JoshiShreyan" />
             </div>
           </section>
+          <footer>
+            
+          </footer>
         </div>
       </div>
     </div>

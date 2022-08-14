@@ -19,6 +19,7 @@ const Home: NextPage = () => {
         <title>MoneyHacks - A Bitcoin-Only Hackathon</title>
         <meta name="description" content="India's first Bitcoin-Only Hackathon held virtually with it's genesis block getting mined on 15th September" />
         <link rel="preload" as="image" href="/btc-banner.webp" />
+        <meta name="og:image" content="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Head>
       <div className="bg-black h-screen">
