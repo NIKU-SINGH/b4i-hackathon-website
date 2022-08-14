@@ -4,14 +4,17 @@ import { useState } from 'react'
 import Countdown from 'react-countdown'
 import Typed from 'react-typed'
 
-import { FaBitcoin, FaDiscord } from 'react-icons/fa'
+import { FaAward, FaBitcoin, FaDiscord, FaMedal, FaTrophy } from 'react-icons/fa'
 import { SiDevpost } from 'react-icons/si'
+import { BiMedal } from 'react-icons/bi'
+import { AiFillTrophy } from 'react-icons/ai'
 
 import Button from '../button'
 import Accordion from './accordion'
+import Prize from './prize'
 
 const Home: NextPage = () => {
-  const [faq, setFaq] = useState(0);
+  const [faq, setFaq] = useState<number>(-1)
   const headlines = ['Design.', 'Develop.', 'Code.', 'Ideate.', 'Bitcoin.']
 
   return (
@@ -103,14 +106,52 @@ const Home: NextPage = () => {
             </p>
           </section>
           <section className="mt-10">
-            <h2 className="text-xl text-green-400 font-medium mx-2">
-              FAQs
-            </h2>
+            <h2 className="text-xl text-green-400 font-medium mx-2">FAQs</h2>
             <div className="mt-4 mx-2 flex flex-col justify-center">
-              <Accordion idx={0} expandedIdx={faq} setExpandedIdx={setFaq} title="Question 1" >Answer 1</Accordion>
-              <Accordion idx={1} expandedIdx={faq} setExpandedIdx={setFaq} title="Question 2" >Answer 2</Accordion>
-              <Accordion idx={2} expandedIdx={faq} setExpandedIdx={setFaq} title="Question 3" >Answer 3</Accordion>
-              <Accordion idx={3} expandedIdx={faq} setExpandedIdx={setFaq} title="Question 4" >Answer 4</Accordion>
+              <Accordion
+                idx={0}
+                expandedIdx={faq}
+                setExpandedIdx={setFaq}
+                title="Question 1"
+              >
+                Answer 1
+              </Accordion>
+              <Accordion
+                idx={1}
+                expandedIdx={faq}
+                setExpandedIdx={setFaq}
+                title="Question 2"
+              >
+                Answer 2
+              </Accordion>
+              <Accordion
+                idx={2}
+                expandedIdx={faq}
+                setExpandedIdx={setFaq}
+                title="Question 3"
+              >
+                Answer 3
+              </Accordion>
+              <Accordion
+                idx={3}
+                expandedIdx={faq}
+                setExpandedIdx={setFaq}
+                title="Question 4"
+              >
+                Answer 4
+              </Accordion>
+            </div>
+          </section>
+          <section className="mt-10">
+            <h2 className="text-xl text-green-400 font-medium mx-2 uppercase">
+              Prizes
+            </h2>
+            <div className="mt-4 mx-2 grid grid-rows-2 grid-cols-2 gap-2">
+              <Prize icon={<FaTrophy />} name="Overall First">First Overall prize will be given to a project that outstands all other submissions</Prize>
+              <Prize icon={<FaMedal />} name="Overall Second">Second Overall prize will be given to the second best project of the hackathon</Prize>
+              <Prize icon={<BiMedal />} name="Overall Third">Best third overall project of the hackathon will win some awesome prizes</Prize>
+              <Prize icon={<FaAward />} name="Best Solo">You project will qualify for this prize if you participate alone without a team</Prize>
+              <Prize icon={<AiFillTrophy />} name="Best Beginner">Your project will qualify for this category if atleast 50% of your topic is functional and you're starting out</Prize>
             </div>
           </section>
         </div>
