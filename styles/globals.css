@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .btn {
+    @apply inline-flex font-mono font-semibold uppercase px-2 py-1 rounded-md justify-center items-center text-white space-x-2 cursor-pointer ;
+  }
+}

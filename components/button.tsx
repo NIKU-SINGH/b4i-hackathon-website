@@ -13,8 +13,8 @@ const Button: NextPage<ButtonProps> = ({
   href = '',
 }) => (
   <a
-    href={href}
-    className={`inline-flex text-gray-800 font-mono font-semibold uppercase px-2 py-1 rounded-md justify-center items-center text-white space-x-2 ${className}`}
+    href={href || undefined}
+    className={`inline-flex font-mono font-semibold uppercase px-2 py-1 rounded-md justify-center items-center text-white space-x-2 cursor-pointer ${className}`}
   >
     {children}
   </a>

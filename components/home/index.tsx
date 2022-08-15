@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
 
-import Countdown from 'react-countdown'
 import Typed from 'react-typed'
 
 import {
@@ -13,7 +12,6 @@ import {
   FaTrophy,
   FaTwitter,
 } from 'react-icons/fa'
-import { SiDevpost } from 'react-icons/si'
 import { BiMedal } from 'react-icons/bi'
 import { AiFillTrophy } from 'react-icons/ai'
 
@@ -22,6 +20,9 @@ import Accordion from './accordion'
 import Prize from './prize'
 import Sponsor from './sponsor'
 import Profile from './profile'
+import Link from 'next/link'
+import RegisterCountdown from '../countdown'
+import Footer from '../footer'
 
 const Home: NextPage = () => {
   const [faq, setFaq] = useState<number>(-1)
@@ -73,31 +74,13 @@ const Home: NextPage = () => {
               creation, innovation and talks about money.
             </p>
             <p className="mx-2 mt-4">
-              <Countdown
-                className="text-white"
-                date={new Date(2022, 8, 15, 0, 0, 0)}
-                renderer={(x) => {
-                  if (x.completed) return <>Event is running!</>
-                  else {
-                    return (
-                      <>
-                        <Button className="mt-4 text-lg font-bold shadow bg-gray-600 hover:bg-gray-500 px-5 py-2">
-                          <SiDevpost />
-                          <span>Register on Devpost</span>
-                        </Button>
-                        <div className="mt-2 text-xs text-gray-400">
-                          <span>^ </span>
-                          {x.days != 0 && <span>{x.days} days </span>}
-                          {x.hours != 0 && <span>{x.hours} hours </span>}
-                          {x.minutes != 0 && <span>{x.minutes} minutes </span>}
-                          {x.seconds != 0 && <span>{x.seconds} seconds</span>}
-                          <span> left</span>
-                        </div>
-                      </>
-                    )
-                  }
-                }}
-              />
+              <RegisterCountdown>
+                <Link href="/genesis">
+                  <span className="btn mt-4 text-lg font-bold shadow bg-gray-600 hover:bg-gray-500 px-5 py-2">
+                    Register Now!
+                  </span>
+                </Link>
+              </RegisterCountdown>
             </p>
             <br />
             <Button className="mx-2 normal-case font-bold px-4 bg-blue-600 hover:bg-blue-500">
@@ -208,13 +191,6 @@ const Home: NextPage = () => {
                 Connecting communities by creating circular Bitcoin Economy.
               </Sponsor>
               <Sponsor
-                logo="/sponsors/bdk.png"
-                name="BitcoinDevKit"
-                link="https://bitcoindevkit.org/"
-              >
-                With BDK, you seamlessly build cross platform mobile wallets.
-              </Sponsor>
-              <Sponsor
                 logo="/sponsors/hexa.png"
                 name="Hexa Wallet"
                 link="https://bitcoindevkit.org/"
@@ -227,13 +203,6 @@ const Home: NextPage = () => {
                 link="https://bitcoindevkit.org/"
               >
                 Earn Bitcoin when you shop.
-              </Sponsor>
-              <Sponsor
-                logo="/sponsors/ldk.jpg"
-                name="LightningDevKit"
-                link="https://lightningdevkit.org/"
-              >
-                Simplest way to integrate Lightning into your Bitcoin wallet.
               </Sponsor>
             </div>
           </section>
@@ -274,19 +243,7 @@ const Home: NextPage = () => {
               />
             </div>
           </section>
-          <footer className="text-white text-xs mt-8 py-4 px-2 flex flex-col space-y-1 border-t border-t-slate-500">
-            <div className="font-medium">Useful Links:</div>
-            <a className="text-blue-300">Privacy Policy</a>
-            <a className="text-blue-300">Terms of Service</a>
-            <br />
-            <div className="font-medium">Questions?</div>
-            <a className="text-blue-300">Contact Us</a>
-            <br />
-            <div className="text-xl flex flex-row space-x-4">
-              <FaGithub />
-              <FaTwitter />
-            </div>
-          </footer>
+          <Footer />
         </div>
       </div>
     </div>
