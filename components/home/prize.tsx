@@ -14,9 +14,9 @@ const Prize: NextPage<PrizeProps> = ({ icon, name, children }) => {
     <motion.div
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className="select-none p-4 border border-green-500 hover:bg-green-900 cursor-pointer flex flex-col justify-center rounded-lg"
+      className="select-none p-4 border border-orange-500 hover:bg-green-900 cursor-pointer flex flex-col justify-center rounded-lg"
     >
-      <div className="text-2xl text-green-400">{icon}</div>
+      <div className="text-2xl text-orange-400">{icon}</div>
       <div className="mt-2 font-medium text-white underline underline-offset-4">
         {name}
       </div>
