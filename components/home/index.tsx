@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
-
 import Typed from 'react-typed'
 
 import {
@@ -13,7 +12,7 @@ import {
   FaTwitter,
 } from 'react-icons/fa'
 import { BiMedal } from 'react-icons/bi'
-import { AiFillTrophy } from 'react-icons/ai'
+import { AiFillTrophy, AiFillDownCircle, AiFillUpCircle } from 'react-icons/ai'
 import { SiDevpost } from 'react-icons/si'
 
 
@@ -29,6 +28,11 @@ import Footer from '../footer'
 const Home: NextPage = () => {
   const [faq, setFaq] = useState<number>(-1)
   const headlines = ['Design.', 'Develop.', 'Code.', 'Ideate.', 'Bitcoin.']
+  const [toggle, setToggle] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  }
 
   return (
     <div className="w-screen font-mono max-h-screen overflow-y-scroll px-1 sm:px-0">
@@ -76,18 +80,20 @@ const Home: NextPage = () => {
               creation, innovation and talks about money.
             </p>
             <p className="mx-2 mt-4">
-              <RegisterCountdown>
-                <Link href="/genesis">
-                  <span className="btn mt-4 text-lg font-bold shadow bg-gray-600 hover:bg-gray-500 px-5 py-2">
-                    Register Now!
-                  </span>
-                </Link>
-              </RegisterCountdown>
+              {/* <RegisterCountdown /> */}
+              <Link href="/genesis">
+                <span className="hidden btn mt-4 text-lg font-bold shadow bg-gray-600 hover:bg-gray-500 px-5 py-2">
+                  Register Now!
+                </span>
+              </Link>
+              {/* </RegisterCountdown> */}
             </p>
             <br />
             <Button className="mx-2 normal-case font-bold px-4 bg-blue-600 hover:bg-blue-500">
               <FaDiscord />
-              <span>Join Discord</span>
+              <Link href="https://discord.gg/VVsQM2jk">
+                <span>Join Discord</span>
+              </Link>
             </Button>
           </main>
           <section className="mt-10">
@@ -114,53 +120,86 @@ const Home: NextPage = () => {
 
               We are fixing the clown world one line of code at a time. Come Join Us!
             </p>
-            <h3 className="mt-6 text-xl text-orange-400">Topics/Ideas</h3>
-                <ul className="mt-2 list-disc">
-                  <li>Topic 1</li>
+            <h3 className="mt-6 text-xl text-orange-400">Hackathon Events</h3>
+            <ul className="mt-2 list-disc">
+              <li className='mb-4' >
+                <h1 className="font-bold text-xl text-orange-500">Hack 1</h1>
+
+                <Accordion
+                  idx={4}
+                  expandedIdx={faq}
+                  setExpandedIdx={setFaq}
+                  title="
                   Bitcoin Web App:
-                  Build a basic web based Bitcoin Wallet application that can receive and send transactions.
+                  Build a basic web based Bitcoin Wallet application that can receive and send transactions."
+                >
+                  <p>
+                    The first hackathon project is intended to be the most simplest Bitcoin application imaginable.
+                    Its a web wallet. All it needs to do is operate and maintain Bitcoin transactions and interface
+                    with the user. The goal is to learn about basic Bitcoin machineries, mnemonics, public-private key pairs, transaction structures,
+                    interacting with the Bitcoin network.
+                  </p>
 
-                  The first hackathon project is intended to be the most simplest Bitcoin application imaginable.
-                  Its a web wallet. All it needs to do is operate and maintain Bitcoin transactions and interface
-                  with the user. The goal is to learn about basic Bitcoin machineries, mnemonics, public-private key pairs, transaction structures,
-                  interacting with the Bitcoin network.
+                  <h1 className='text-base font-bold mt-4 underline'>Judging Criteria</h1>
+                  <p className=''>
+                    The projects will be judged by the following generic parameters. Its important to note that there is no
+                    one right way to do a Bitcoin Wallet. The project will be judged on the approach and design decisions
+                    taken by the developer. Below are few pointers (not exhaustive) over which judgement will be made.
+                    <ul className='list-disc ml-8'>
+                      <li>UI/UX : The layout of the wallet, and its user workflow.</li>
+                      <li>Security: How keypairs are stored and accessed by the app.</li>
+                      <li>Features: Functionalities offered by the wallet app.</li>
+                    </ul>
+                  </p>
 
-                  Judging Criteria:
-                  The projects will be judged by the following generic parameters. Its important to note that there is no
-                  one right way to do a Bitcoin Wallet. The project will be judged on the approach and design decisions
-                  taken by the developer. Below are few pointers (not exhaustive) over which judgement will be made.
-                   - UI/UX : The layout of the wallet, and its user workflow.
-                   - Security: How keypairs are stored and accessed by the app.
-                   - Features: Functionalities offered by the wallet app.
+                  <h1 className='text-base font-bold mt-4 underline'> Qualifying Criteria</h1>
+                  <p>
+                    The Project will be considered qualified if it can perform the following tasks.
+                    <ul className='list-disc ml-8'>
+                      <li>Generate mnemonic seed phrase for use at wallet startup.</li>
+                      <li>Create new addresses for receiving funds.</li>
+                      <li>Create Transaction to send funds to a given address and broadcast it to the network.</li>
+                      <li>Sync with the network and show updated balance.</li>
+                    </ul>
+                    If a project does not satisfy the above 4 basic operations, it won't be considered qualified.
+                  </p>
 
-                  Qualifying Criteria:
-                  The Project will be considered qualified if it can perform the following tasks.
-                   - Generate mnemonic seed phrase for use at wallet startup.
-                   - Create new addresses for receiving funds.
-                   - Create Transaction to send funds to a given address and broadcast it to the network.
-                   - Sync with the network and show updated balance.
-                  If a project does not satisfy the above 4 basic operations, it won't be considered qualified.
-
-                  Bonus Criteria:
+                  <h1 className='text-base font-bold mt-4 underline'>Bonus Criteria</h1>
                   Above the basic feature extra points will be alloted for the following advanced but optional features.
-                   - Create OP_RETURN transactions.
-                   - Create Multisig transactions and sign PSBTs by multiple participants.
-                   - Sign random messages with the wallet.
+                  <ul className='list-disc ml-8'>
+                    <li>Create OP_RETURN transactions.</li>
+                    <li>Create Multisig transactions and sign PSBTs by multiple participants.</li>
+                    <li>Sign random messages with the wallet.</li>
+                  </ul>
 
                   To perform this tasks participants can take help of any available Bitcoin libraries out there.
                   Few popular libraries are listed below, but participants are free to choose their own, or even write
                   basic operational codes by themselves.
-                   - Bitcoinjs : https://github.com/bitcoinjs/bitcoinjs-lib
-                   - BCoin : https://github.com/bcoin-org/bcoin
-                   - Python Bitcoinlib : https://github.com/petertodd/python-bitcoinlib
-                   - BDK: https://github.com/bitcoindevkit/bdk
-                </ul>
-          <RegisterCountdown>
-            <a className="btn mt-4 text-lg font-bold shadow bg-gray-600 hover:bg-gray-500 px-5 py-2">
-              <SiDevpost />
-              <span>Register on bolt.fun</span>
-            </a>
-          </RegisterCountdown>
+                  <ul className='list-disc ml-8 underline text-orange-500'>
+                    <li>
+                      <Link href="https://github.com/bitcoinjs/bitcoinjs-lib">Bitcoinjs</Link>
+                    </li>
+                    <li>
+                      <Link href="https://github.com/bcoin-org/">BCoin</Link>
+                    </li>
+                    <li>
+                      <Link href="https://github.com/petertodd/python-bitcoinlib">Python Bitcoinlib</Link>
+                    </li>
+                    <li>  
+                      <Link href="https://github.com/bitcoindevkit/bdk">BDK</Link>
+                    </li>
+                  </ul>
+
+
+                </Accordion>
+              </li>
+            </ul>
+            <RegisterCountdown>
+              <a className="btn mt-4 text-lg font-bold shadow bg-gray-600 hover:bg-gray-500 px-5 py-2">
+                <SiDevpost />
+                <span>Register on bolt.fun</span>
+              </a>
+            </RegisterCountdown>
           </section>
           <section className="mt-10">
             <h2 className="text-xl text-orange-400 font-medium mx-2">FAQs</h2>

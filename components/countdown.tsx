@@ -10,7 +10,7 @@ type RegisterCountdownProps = {
 const RegisterCountdown: NextPage<RegisterCountdownProps> = ({ children }) => (
   <Countdown
     className="text-white"
-    date={new Date(2022, 10, 15, 0, 0, 0)}
+    date={ new Date(2022, 9, 15, 0, 0, 0)}
     renderer={(x) => {
       if (x.completed)
         return <div className="text-white italic">Event is ongoing!</div>

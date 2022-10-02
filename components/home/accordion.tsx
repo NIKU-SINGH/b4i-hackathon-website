@@ -36,7 +36,7 @@ const Accordion: NextPage<AccordionProps> = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.section
-            className={`select-none px-2 bg-white rounded ${
+            className={`select-none px-2 text-gray-300  bg-gray-700 rounded ${
               isOpen && 'rounded-t-none'
             }`}
             key="content"
